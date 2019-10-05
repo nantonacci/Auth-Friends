@@ -10,21 +10,21 @@ import './App.css';
 function App() {
   return (
     <Router>
-    <div className="App">
-      <ul className="nav">
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/protected">Friends List</Link>
-        </li>
-      </ul>
-      <Switch>
-        <PrivateRoute exact path="/protected" component={FriendsList} />
-        <Route path="/login" component={Login} />
-        <Route component={Login} />
-      </Switch>
-    </div>
+      <div className="App">
+        <ul className="nav">
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/protected">Friends List</Link>
+          </li>
+        </ul>
+        <Switch>
+          <PrivateRoute exact path="/protected" component={FriendsList} />
+          <Route path="/login" component={Login} />
+          <Route component={Login} />
+        </Switch>
+      </div>
     </Router>
   );
 }
