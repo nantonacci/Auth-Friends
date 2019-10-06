@@ -4,19 +4,24 @@ import { axiosWithAuth } from '../utils/axiosWithAuth.js';
 
 class AddFriend extends React.Component {
     state = {
-        newFriends: []
+        name: '',
+        age: '',
+        email: ''
     };
 
-    componentDidMount(){
-        this.addFriend();
-    }
+    handleChange = e => {
+        this.setState({
+          [e.target.name]: e.target.value
+        });
+      };
+
 
     addFriend = () => {
         axiosWithAuth()
-            .post('/friends', newFriends)
+            .post('/friends', this.state)
             .then(res => {
                 console.log('new friend res: ' + res);
-                this.setState({newFriends: res})
+                
             })
             .catch(err => console.log('new friend err: ' + err))
     };
@@ -24,7 +29,7 @@ class AddFriend extends React.Component {
     render() {
         return (
             <>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.addFriend}>
                     <input
                     type="text"
                     placeholder="name"
