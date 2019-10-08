@@ -17,8 +17,8 @@ class FriendsList extends React.Component {
         axiosWithAuth()
             .get('/friends')
             .then(res  => {
-                console.log('response:' + res)
-                this.setState({friends: res})
+                console.log('response: ', res.data)
+                this.setState({friends: res.data})
             })
             .catch(err => console.log(err))
     };
