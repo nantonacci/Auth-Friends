@@ -1,0 +1,23 @@
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  padding: 10px;
+}
+
+a {
+  color: cornflowerblue;
+}
+a:hover {
+  color: steelblue;
+}
